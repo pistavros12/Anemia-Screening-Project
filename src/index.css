@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --bg-main: #F8FAFC;
+    --card-surface: #FFFFFF;
+    --card-subtle: #F1F5F9;
+    --primary-coffee: #0F172A;
+    --primary-brand: #047857;
+    --accent-green: #059669;
+    --accent-gold: #D97706;
+    --alert-red: #DC2626;
+    --text-primary: #0F172A;
+    --text-muted: #334155;
+    --border-color: #CBD5E1;
+  }
+
+  .dark {
+    --bg-main: #0B0F19;
+    --card-surface: #1E293B;
+    --card-subtle: #0F172A;
+    --primary-coffee: #F8FAFC;
+    --primary-brand: #10B981;
+    --accent-green: #10B981;
+    --accent-gold: #FBBF24;
+    --alert-red: #EF4444;
+    --text-primary: #F8FAFC;
+    --text-muted: #CBD5E1;
+    --border-color: #334155;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: 'Plus Jakarta Sans', 'Noto Sans', 'Noto Sans Ethiopic', system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, .font-serif-header {
+    font-family: 'Noto Serif Ethiopic', 'Lora', Georgia, serif;
+    letter-spacing: -0.015em;
+  }
+}
+
+/* Interactive Ethiopian Green & Golden Card Boxes */
+.box-interactive-green {
+  border: 2px solid #86efac; /* green-300 / emerald-300 */
+  border-radius: 1rem;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.box-interactive-green:hover {
+  border-color: #10b981; /* emerald-500 */
+  box-shadow: 0 10px 20px -5px rgba(16, 185, 129, 0.2), 0 4px 6px -2px rgba(16, 185, 129, 0.1);
+  transform: translateY(-1px);
+}
+
+.box-interactive-gold {
+  border: 2px solid #fcd34d; /* amber-300 */
+  border-radius: 1rem;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.box-interactive-gold:hover {
+  border-color: #f59e0b; /* amber-500 */
+  box-shadow: 0 10px 20px -5px rgba(245, 158, 11, 0.25), 0 4px 6px -2px rgba(245, 158, 11, 0.1);
+  transform: translateY(-1px);
+}
+
+.dark .box-interactive-green {
+  border-color: rgba(52, 211, 153, 0.45);
+}
+.dark .box-interactive-green:hover {
+  border-color: #34d399;
+  box-shadow: 0 10px 20px -5px rgba(16, 185, 129, 0.35);
+}
+
+.dark .box-interactive-gold {
+  border-color: rgba(251, 191, 36, 0.45);
+}
+.dark .box-interactive-gold:hover {
+  border-color: #fbbf24;
+  box-shadow: 0 10px 20px -5px rgba(245, 158, 11, 0.35);
+}
+
+/* Woven textile geometric border pattern (Tibeb) */
+.tibeb-pattern-light {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='8' viewBox='0 0 36 8'%3E%3Cpath d='M6 0 L12 4 L6 8 L0 4 Z' fill='%23059669'/%3E%3Cpath d='M18 0 L24 4 L18 8 L12 4 Z' fill='%23D97706'/%3E%3Cpath d='M30 0 L36 4 L30 8 L24 4 Z' fill='%23DC2626'/%3E%3Ccircle cx='6' cy='4' r='1.2' fill='%23FFFFFF'/%3E%3Ccircle cx='18' cy='4' r='1.2' fill='%230F172A'/%3E%3Ccircle cx='30' cy='4' r='1.2' fill='%23FFFFFF'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 36px 8px;
+}
+
+.tibeb-pattern-dark {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='8' viewBox='0 0 36 8'%3E%3Cpath d='M6 0 L12 4 L6 8 L0 4 Z' fill='%2310B981'/%3E%3Cpath d='M18 0 L24 4 L18 8 L12 4 Z' fill='%23FBBF24'/%3E%3Cpath d='M30 0 L36 4 L30 8 L24 4 Z' fill='%23EF4444'/%3E%3Ccircle cx='6' cy='4' r='1.2' fill='%230B0F19'/%3E%3Ccircle cx='18' cy='4' r='1.2' fill='%23F8FAFC'/%3E%3Ccircle cx='30' cy='4' r='1.2' fill='%230B0F19'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 36px 8px;
+}
+
+/* Custom modern scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Leaflet map container fix */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  border-radius: 14px;
+  z-index: 10;
+}

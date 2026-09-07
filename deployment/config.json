@@ -1,0 +1,8 @@
+{
+  "backbone_name": "ResNet50",
+  "img_size": 224,
+  "final_threshold": 0.42,
+  "hb_mean": 10.8,
+  "hb_std": 2.1,
+  "use_hybrid": false
+}
