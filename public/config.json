@@ -1,0 +1,20 @@
+{
+  "classifier_kind": "CNN",
+  "regressor_kind": "CNN",
+  "cnn_backbone": "Xception",
+  "img_size": 224,
+  "final_threshold": 0.17,
+  "hb_mean": 10.322067260742188,
+  "hb_std": 2.2065885066986084,
+  "anemia_threshold_g_dl": 11.0,
+  "classical_feature_names": [
+    "LAB_L_mean",
+    "LAB_a_mean",
+    "LAB_b_mean",
+    "LAB_L_std",
+    "LAB_a_std",
+    "LAB_b_std",
+    "erythema_index",
+    "green_red_ratio"
+  ]
+}
